@@ -1,0 +1,11 @@
+[package]
+name = "minmaxn"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "finding the minimum or maximum n values from an iterable"
+authors = ["Jonathan Dönszelmann <jonabent@gmail.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
