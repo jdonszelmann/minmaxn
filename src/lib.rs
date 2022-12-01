@@ -1,5 +1,6 @@
 use std::mem;
 
+/// Trait to extend iterables with `max_n` and `min_n`
 pub trait MinMaxN<T: Ord> {
     fn max_n<const N: usize>(self) -> [Option<T>; N];
     fn min_n<const N: usize>(self) -> [Option<T>; N];
@@ -23,6 +24,7 @@ where
     U: IntoIterator<Item = T>,
     T: Ord,
 {
+    /// Finds the `N` largest values in self
     fn max_n<const N: usize>(self) -> [Option<T>; N] {
         let iter = self.into_iter();
         let size_hint = iter.size_hint().0;
@@ -55,6 +57,7 @@ where
         res
     }
 
+    /// Finds the `N` smallest values in self
     fn min_n<const N: usize>(self) -> [Option<T>; N] {
         let iter = self.into_iter();
         let size_hint = iter.size_hint().0;
