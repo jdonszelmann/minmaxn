@@ -42,6 +42,12 @@ where
         }
 
         for mut i in iter {
+            if let Some(ref j) = res[res.len() - 1] {
+                if i < *j {
+                    continue;
+                }
+            }
+
             for j in &mut res {
                 if let Some(j) = j {
                     if i > *j {
@@ -75,6 +81,12 @@ where
         }
 
         for mut i in iter {
+            if let Some(ref j) = res[res.len() - 1] {
+                if i > *j {
+                    continue;
+                }
+            }
+
             for j in &mut res {
                 if let Some(j) = j {
                     if i < *j {
